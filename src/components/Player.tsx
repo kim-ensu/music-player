@@ -16,10 +16,9 @@ const Player: FC<Props> = (props) => {
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
 
-  useEffect(() => {
-    const seconds = Math.floor(audioPlayer.current.duration);
-    setDuration(seconds);
-  }, [audioPlayer?.current?.onloadedmetadata, audioPlayer?.current?.readyState]);
+  const onLoadedMetadata = () => {
+    setDuration(audioPlayer.current?.duration);
+  };
 
   const calculateTime = (secs: number): string => {
     const minutes = Math.floor(secs / 60);
@@ -45,7 +44,11 @@ const Player: FC<Props> = (props) => {
         <img src={track.album_img} alt="" width={100} height={100} />
       </div>
       <div className="player__control-panel">
-        <audio ref={audioPlayer} src={track.audio} preload="metadata"></audio>
+        <audio
+          ref={audioPlayer}
+          src={track.audio}
+          preload="metadata"
+          onLoadedMetadata={onLoadedMetadata}></audio>
         <div className="player__buttons">
           <button className="backward">
             <AiFillStepBackward />
@@ -60,7 +63,7 @@ const Player: FC<Props> = (props) => {
         <div className="player__timeline-waveform">
           <div>0:00</div>
           <input type="range" />
-          <div>{calculateTime(duration)}</div>
+          <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
         </div>
       </div>
       <div className="player__volume"></div>
