@@ -45,8 +45,17 @@ const Player: FC<Props> = (props) => {
     }
   };
 
+  const whilePlaying = () => {
+    progressBar.current.value = audioPlayer.current.currentTime.toString();
+    changePlayerCurrentTime();
+  };
+
   const changeRange = () => {
     audioPlayer.current.currentTime = +progressBar.current.value;
+    changePlayerCurrentTime();
+  };
+
+  const changePlayerCurrentTime = () => {
     progressBar.current.style.setProperty(
       "--seek-before-width",
       `${(+progressBar.current.value / duration) * 100}%`
