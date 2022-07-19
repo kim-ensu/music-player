@@ -12,6 +12,7 @@ type Props = {};
 const Player: FC<Props> = (props) => {
   const track = useSelector((state: RootState) => state.music.musicList[4]);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [duration, setDuration] = useState<number>(0);
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
 
@@ -32,11 +33,6 @@ const Player: FC<Props> = (props) => {
       </div>
       <div className="player__control-panel">
         <audio ref={audioPlayer} src={track.audio} preload="metadata"></audio>
-        <div className="player__timeline-waveform">
-          <div>0:00</div>
-          <input type="range" />
-          <div>2:49</div>
-        </div>
         <div className="player__buttons">
           <button className="backward">
             <AiFillStepBackward />
@@ -47,6 +43,11 @@ const Player: FC<Props> = (props) => {
           <button className="forward">
             <AiFillStepForward />
           </button>
+        </div>
+        <div className="player__timeline-waveform">
+          <div>0:00</div>
+          <input type="range" />
+          <div>{duration}</div>
         </div>
       </div>
       <div className="player__volume"></div>
