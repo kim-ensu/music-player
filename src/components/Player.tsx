@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "store/index";
 import "./Player.css";
@@ -10,6 +10,8 @@ import { AiFillPauseCircle } from "react-icons/ai";
 type Props = {};
 
 const Player: FC<Props> = (props) => {
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
   const count = useSelector((state: RootState) => state.music.musicList[0]);
   return (
     <div className="player">
@@ -25,7 +27,9 @@ const Player: FC<Props> = (props) => {
           <button className="backward">
             <AiFillStepBackward />
           </button>
-          <button className="play-pause">play pause</button>
+          <button className="play-pause">
+            {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
+          </button>
           <button className="forward">
             <AiFillStepForward />
           </button>
