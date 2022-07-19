@@ -9,10 +9,14 @@ type Props = {
 
 const TrackCard: FC<Props> = ({ track: { name, singer, album_img } }) => {
   return (
-    <li>
-      <img src={album_img} alt="track cover" width={150} height={150} />
-      <h1>{name}</h1>
-      <h2>{singer}</h2>
+    <li className="playlist_item">
+      <div className="playlist_img-holder">
+        <img src={album_img} alt="track cover" width={150} height={150} />
+      </div>
+      <div className="playlist_text">
+        <h1>{name}</h1>
+        <p>{singer}</p>
+      </div>
     </li>
   );
 };

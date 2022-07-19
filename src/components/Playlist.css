@@ -1,0 +1,6 @@
+.playlist > ul {
+  display: grid;
+  place-items: center;
+  background-color: black;
+  color: #fff;
+}
