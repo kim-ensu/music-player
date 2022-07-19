@@ -16,11 +16,12 @@ const Sidebar: FC<Props> = (props) => {
 
   const handleClick = (genreId: number) => {
     dispatch(changeGenreId(genreId));
+    setClick(false);
   };
 
   return (
     <div className="sidebar">
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
+      <ul className={click ? "genres-menu active" : "genres-menu"}>
         {genresList.map(({ id, name }) => (
           <li key={id} onClick={() => handleClick(id)}>
             {name}

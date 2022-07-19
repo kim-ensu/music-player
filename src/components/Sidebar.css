@@ -14,8 +14,14 @@
   color: #fff;
 }
 
-.nav-menu {
+.hamburger-color:hover{
+  cursor: pointer;
+  color: #3C28EA;
+}
+
+.genres-menu {
   position: absolute;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -27,12 +33,19 @@
   transition: 0.3s;
   z-index: 1;
   background: rgba(0, 0, 0, .9);
+  font-family: Poppins,sans-serif;
+  font-size: 1.8rem;
 }
 
-.nav-menu.active {
+.genres-menu.active {
   left: 0;
 }
 
-.nav-menu li {
+.genres-menu li {
   padding: 1rem 0;
+}
+
+.genres-menu li:hover {
+  color: #3C28EA;
+  cursor: pointer;
 }
