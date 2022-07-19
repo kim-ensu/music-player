@@ -57,7 +57,9 @@
   }
 
   .sidebar {
-    width: 30%;
+    position: fixed;
+    width: 200px;
+    height: 100%;
   }
 
   .genres-menu {
