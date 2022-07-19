@@ -10,3 +10,26 @@
   transition: all 0.4s;
   cursor: pointer;
 }
+
+.playlist_img-holder > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+.playlist_text {
+  margin-top: 1rem;
+  line-height: 1;
+}
+
+.playlist_text > h1 {
+  font-size: 1.2rem;
+}
+
+.playlist_text > p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: gray;
+}
