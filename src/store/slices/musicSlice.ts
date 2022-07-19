@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ITrack } from "models/models";
-import { musicListInitState } from "utils/initdata";
+import { musicListInitState } from "utils/musicInitData";
 
 interface IMusicState {
   loading: boolean;
@@ -21,14 +21,11 @@ export const musicSlice = createSlice({
   name: "music",
   initialState,
   reducers: {
-    addTrack: (state, action: PayloadAction<ITrack>) => {
-      state.musicList.push(action.payload);
-    },
     changeCurrentTrackId: (state, action: PayloadAction<number>) => {
       state.currentTrackId = action.payload;
     },
   },
 });
 
-export const { addTrack, changeCurrentTrackId } = musicSlice.actions;
+export const { changeCurrentTrackId } = musicSlice.actions;
 export default musicSlice.reducer;
