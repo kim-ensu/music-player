@@ -26,6 +26,7 @@ const Player: FC<Props> = (props) => {
     if (trackId !== null) {
       setIsPlaying(true);
       audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
     }
   }, [trackId]);
 
