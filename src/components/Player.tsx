@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from "react";
+import React, { FC, useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "store/index";
 import "./Player.css";
@@ -15,6 +15,10 @@ const Player: FC<Props> = (props) => {
   const [duration, setDuration] = useState<number>(0);
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
+
+  useEffect(() => {
+    setDuration(audioPlayer.current.duration);
+  }, [audioPlayer?.current?.onloadedmetadata, audioPlayer?.current?.readyState]);
 
   const togglePlayPause = () => {
     const prevValue = isPlaying;
