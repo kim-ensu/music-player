@@ -1,7 +1,7 @@
 export interface ITrack {
   name: string;
   singer: string;
-  genre: string;
+  genreId: number;
   audio: string;
   album_img: string;
   id: number;
