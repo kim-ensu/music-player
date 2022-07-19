@@ -62,7 +62,7 @@ const Player: FC<Props> = (props) => {
           </button>
         </div>
         <div className="player__timeline-waveform">
-          <div>0:00</div>
+          <div>{calculateTime(currentTime)}</div>
           <input type="range" />
           <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
         </div>
