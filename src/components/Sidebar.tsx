@@ -20,7 +20,7 @@ const Sidebar: FC<Props> = (props) => {
 
   return (
     <div className="sidebar">
-      <ul>
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
         {genresList.map(({ id, name }) => (
           <li key={id} onClick={() => handleClick(id)}>
             {name}
