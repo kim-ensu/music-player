@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "store/index";
 import "./Player.css";
@@ -10,18 +10,28 @@ import { AiFillPauseCircle } from "react-icons/ai";
 type Props = {};
 
 const Player: FC<Props> = (props) => {
+  const track = useSelector((state: RootState) => state.music.musicList[4]);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
+  const audioPlayer = useRef<HTMLAudioElement>(null!);
+
   const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
+    const prevValue = isPlaying;
+    setIsPlaying(!prevValue);
+    if (prevValue) {
+      audioPlayer.current.play();
+    } else {
+      audioPlayer.current.pause();
+    }
   };
 
-  const count = useSelector((state: RootState) => state.music.musicList[0]);
   return (
     <div className="player">
-      <div className="player__current-song"></div>
+      <div className="player__current-song">
+        <img src={track.album_img} alt="" width={100} height={100} />
+      </div>
       <div className="player__control-panel">
-        <audio src={count.audio} preload="metadata"></audio>
+        <audio ref={audioPlayer} src={track.audio} preload="metadata"></audio>
         <div className="player__timeline-waveform">
           <div>0:00</div>
           <input type="range" />
