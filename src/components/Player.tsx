@@ -17,7 +17,7 @@ const Player: FC<Props> = (props) => {
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
   const progressBar = useRef<HTMLInputElement>(null!);
-  const animationRef = useRef();
+  const animationRef = useRef<number>(null!);
 
   const onLoadedMetadata = () => {
     setDuration(audioPlayer.current?.duration);
