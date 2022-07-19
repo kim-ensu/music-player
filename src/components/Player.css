@@ -33,3 +33,9 @@
 .player__timeline-waveform {
   display: flex;
 }
+
+.player__timeline-waveform > div {
+  color: var(--primary);
+  font-family: monospace;
+  font-size: 16px;
+}
