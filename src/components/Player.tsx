@@ -18,7 +18,7 @@ const Player: FC<Props> = (props) => {
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
-    if (prevValue) {
+    if (!prevValue) {
       audioPlayer.current.play();
     } else {
       audioPlayer.current.pause();
