@@ -1,0 +1,26 @@
+.player {
+  --primary: #FCFCFC;
+  --primaryHover: #3C28EA;
+
+  display: flex;
+  width: 1240px;
+  background-color: #1B1B1B;
+}
+
+.player__buttons {
+  display: flex;
+}
+
+.player__buttons > button {
+  color: var(--primary);
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.player__buttons > button:hover {
+  color: var(--primaryHover)
+}

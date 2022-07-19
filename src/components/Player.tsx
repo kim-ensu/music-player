@@ -44,23 +44,26 @@ const Player: FC<Props> = (props) => {
       <div className="player__current-song">
         <img src={track.album_img} alt="" width={100} height={100} />
       </div>
+
       <div className="player__control-panel">
         <audio
           ref={audioPlayer}
           src={track.audio}
           preload="metadata"
           onLoadedMetadata={onLoadedMetadata}></audio>
+
         <div className="player__buttons">
-          <button className="backward">
+          <button>
             <AiFillStepBackward />
           </button>
-          <button className="play-pause" onClick={togglePlayPause}>
+          <button onClick={togglePlayPause}>
             {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
           </button>
-          <button className="forward">
+          <button>
             <AiFillStepForward />
           </button>
         </div>
+
         <div className="player__timeline-waveform">
           <div>{calculateTime(currentTime)}</div>
           <input type="range" defaultValue="0" />
