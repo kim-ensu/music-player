@@ -1,13 +1,12 @@
 import React, { FC } from "react";
-import { useSelector } from "react-redux";
-import type { RootState } from "store/index";
 import TrackCard from "./TrackCard";
 import "./Playlist.css";
+import { useAppSelector } from "store/hooks";
 
 type Props = {};
 
 const Playlist: FC<Props> = (props) => {
-  const playlistArr = useSelector((state: RootState) => state.music.musicList);
+  const playlistArr = useAppSelector((state) => state.music.musicList);
   return (
     <div className="playlist">
       <ul>
