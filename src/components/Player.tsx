@@ -23,8 +23,10 @@ const Player: FC<Props> = (props) => {
   const animationRef = useRef<number>(null!);
 
   useEffect(() => {
-    setIsPlaying(true);
-    audioPlayer.current.play();
+    if (trackId !== null) {
+      setIsPlaying(true);
+      audioPlayer.current.play();
+    }
   }, [trackId]);
 
   const onLoadedMetadata = () => {
@@ -74,9 +76,11 @@ const Player: FC<Props> = (props) => {
 
   return (
     <div className="player">
-      <div className="player__current-song">
-        <img src={currentTrack?.album_img} alt="" width={100} height={100} />
-      </div>
+      {trackId && (
+        <div className="player__current-song">
+          <img src={currentTrack?.album_img} alt="" width={100} height={100} />
+        </div>
+      )}
 
       <div className="player__control-panel">
         <audio
