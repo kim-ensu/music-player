@@ -13,6 +13,7 @@ const Player: FC<Props> = (props) => {
   const track = useSelector((state: RootState) => state.music.musicList[4]);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [duration, setDuration] = useState<number>(0);
+  const [currentTime, setCurrentTime] = useState<number>(0);
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
 
