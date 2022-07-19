@@ -17,6 +17,7 @@ const Player: FC<Props> = (props) => {
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
   const progressBar = useRef<HTMLInputElement>(null!);
+  const animationRef = useRef();
 
   const onLoadedMetadata = () => {
     setDuration(audioPlayer.current?.duration);
@@ -37,8 +38,10 @@ const Player: FC<Props> = (props) => {
     setIsPlaying(!prevValue);
     if (!prevValue) {
       audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
     } else {
       audioPlayer.current.pause();
+      cancelAnimationFrame(animationRef.current);
     }
   };
 
