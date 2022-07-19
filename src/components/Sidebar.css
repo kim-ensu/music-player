@@ -61,8 +61,11 @@
     width: 200px;
     height: 100%;
   }
-
+  
   .genres-menu {
     position: static;
+    display: block;
+    text-align: left;
+    padding: 82px 0 0 37px;
   }
 }
