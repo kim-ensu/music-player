@@ -13,7 +13,7 @@ interface IMusicState {
 const initialState: IMusicState = {
   loading: false,
   error: "",
-  currentTrackId: 0,
+  currentTrackId: 1,
   musicList: musicListInitState,
 };
 
@@ -24,8 +24,11 @@ export const musicSlice = createSlice({
     addTrack: (state, action: PayloadAction<ITrack>) => {
       state.musicList.push(action.payload);
     },
+    changeCurrentTrackId: (state, action: PayloadAction<number>) => {
+      state.currentTrackId = action.payload;
+    },
   },
 });
 
-export const { addTrack } = musicSlice.actions;
+export const { addTrack, changeCurrentTrackId } = musicSlice.actions;
 export default musicSlice.reducer;
