@@ -22,7 +22,10 @@ const Player: FC<Props> = (props) => {
   const progressBar = useRef<HTMLInputElement>(null!);
   const animationRef = useRef<number>(null!);
 
-  useEffect(() => {}, [trackId]);
+  useEffect(() => {
+    setIsPlaying(true);
+    audioPlayer.current.play();
+  }, [trackId]);
 
   const onLoadedMetadata = () => {
     setDuration(audioPlayer.current?.duration);
