@@ -6,8 +6,10 @@ import Sidebar from "components/Sidebar";
 function App() {
   return (
     <div className="App">
-      <Sidebar />
-      <Playlist />
+      <div className="sidebar-playlist-wrap">
+        <Sidebar />
+        <Playlist />
+      </div>
       <Player />
     </div>
   );
