@@ -12,7 +12,7 @@ const Playlist: FC<Props> = (props) => {
     <div className="playlist">
       <ul>
         {playlistArr.map((track) => (
-          <TrackCard track={track} />
+          <TrackCard track={track} key={track.id} />
         ))}
       </ul>
     </div>
