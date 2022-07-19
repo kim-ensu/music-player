@@ -81,3 +81,28 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-focus-outer {
   border: 0;
 }
+
+/* progress bar - chrome and safari */
+
+input[type=range]::before {
+  content: "";
+  height: 11px;
+  width: var(--seek-before-width);
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* progress bar - firefox */
+
+input[type=range]::-moz-range-progress {
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 11px;
+}
