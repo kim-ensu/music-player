@@ -4,7 +4,7 @@
   background-color: black;
   color: #fff;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 0 120px;
 }
 
 .player__current-song > img {
