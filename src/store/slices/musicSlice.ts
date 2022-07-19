@@ -6,12 +6,14 @@ import { musicListInitState } from "utils/initdata";
 interface IMusicState {
   loading: boolean;
   error: string;
+  currentTrackId: number;
   musicList: ITrack[];
 }
 
 const initialState: IMusicState = {
   loading: false,
   error: "",
+  currentTrackId: 0,
   musicList: musicListInitState,
 };
 
