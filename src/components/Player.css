@@ -3,6 +3,8 @@
   --primaryHover: #3C28EA;
 
   position: fixed;
+  min-height: 100px;
+  width: 100%;
   bottom: 0;
   display: flex;
   background-color: #1B1B1B;
