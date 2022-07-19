@@ -1,7 +1,7 @@
 .playlist > ul {
   display: grid;
   place-items: center;
-  background-color: black;
+  background-color: #121212;
   color: #fff;
   gap: 20px;
   padding: 20px 0 120px;
