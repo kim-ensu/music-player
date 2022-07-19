@@ -6,6 +6,8 @@
 .hamburger {
   position: relative;
   z-index: 2;
+  left: 34px;
+  top: 38px;
 }
 
 .hamburger-color {
