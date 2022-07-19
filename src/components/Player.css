@@ -51,6 +51,8 @@ button.play-pause-btn {
 .player__timeline-waveform {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   gap: 10px;
 }
 
@@ -71,8 +73,8 @@ input[type=range] {
   background: var(--bar-bg);
   border-radius: 10px;
   position: relative;
-  width: 100%;
-  height: 11px;
+  width: 50%;
+  height: 9px;
   outline: none;
 }
 
@@ -82,8 +84,8 @@ input[type=range]::-webkit-slider-runnable-track {
   background: var(--bar-bg);
   border-radius: 10px;
   position: relative;
-  width: 100%;
-  height: 11px;
+  width: 50%;
+  height: 9px;
   outline: none;
 }
 
@@ -93,8 +95,8 @@ input[type=range]::-moz-range-track {
   background: var(--bar-bg);
   border-radius: 10px;
   position: relative;
-  width: 100%;
-  height: 11px;
+  width: 50%;
+  height: 9px;
   outline: none;
 }
 
@@ -106,7 +108,7 @@ input[type=range]::-moz-focus-outer {
 
 input[type=range]::before {
   content: "";
-  height: 11px;
+  height: 9px;
   width: var(--seek-before-width);
   background-color: var(--seek-before-color);
   border-top-left-radius: 10px;
@@ -124,7 +126,7 @@ input[type=range]::-moz-range-progress {
   background-color: var(--seek-before-color);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  height: 11px;
+  height: 9px;
 }
 
 /* knobby -chrome and safari */
@@ -138,7 +140,7 @@ input[type=range]::-webkit-slider-thumb {
   background-color: var(--knobby);
   cursor: pointer;
   position: relative;
-  margin: -2px 0 0 0;
+  margin: -3px 0 0 0;
   z-index: 3;
 }
 
