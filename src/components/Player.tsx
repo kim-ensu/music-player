@@ -69,8 +69,8 @@ const Player: FC<Props> = (props) => {
           <input type="range" defaultValue="0" />
           <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
         </div>
+        <div className="player__volume">Volume</div>
       </div>
-      <div className="player__volume"></div>
     </div>
   );
 };

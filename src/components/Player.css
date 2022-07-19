@@ -7,6 +7,11 @@
   background-color: #1B1B1B;
 }
 
+.player__control-panel {
+  display: flex;
+  align-items: center;
+}
+
 .player__buttons {
   display: flex;
 }
@@ -23,4 +28,8 @@
 
 .player__buttons > button:hover {
   color: var(--primaryHover)
+}
+
+.player__timeline-waveform {
+  display: flex;
 }
