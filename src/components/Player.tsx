@@ -48,6 +48,7 @@ const Player: FC<Props> = (props) => {
   const whilePlaying = () => {
     progressBar.current.value = audioPlayer.current.currentTime.toString();
     changePlayerCurrentTime();
+    animationRef.current = requestAnimationFrame(whilePlaying);
   };
 
   const changeRange = () => {
