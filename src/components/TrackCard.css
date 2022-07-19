@@ -26,6 +26,7 @@
 .playlist_text {
   margin-top: 1rem;
   line-height: 1;
+  width: 100%;
 }
 
 .playlist_text > h1 {

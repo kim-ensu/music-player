@@ -3,4 +3,6 @@
   place-items: center;
   background-color: black;
   color: #fff;
+  gap: 20px;
+  padding: 20px;
 }
