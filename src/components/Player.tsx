@@ -2,6 +2,10 @@ import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "store/index";
 import "./Player.css";
+import { AiFillStepBackward } from "react-icons/ai";
+import { AiFillStepForward } from "react-icons/ai";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillPauseCircle } from "react-icons/ai";
 
 type Props = {};
 
@@ -18,9 +22,13 @@ const Player: FC<Props> = (props) => {
           <div>2:49</div>
         </div>
         <div className="player__buttons">
-          <button className="backward">previous</button>
+          <button className="backward">
+            <AiFillStepBackward />
+          </button>
           <button className="play-pause">play pause</button>
-          <button className="forward">next</button>
+          <button className="forward">
+            <AiFillStepForward />
+          </button>
         </div>
       </div>
       <div className="player__volume"></div>
