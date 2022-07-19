@@ -21,6 +21,14 @@ const Player: FC<Props> = (props) => {
     setDuration(seconds);
   }, [audioPlayer?.current?.onloadedmetadata, audioPlayer?.current?.readyState]);
 
+  const calculateTime = (secs: number): string => {
+    const minutes = Math.floor(secs / 60);
+    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${returnedMinutes}:${returnedSeconds}`;
+  };
+
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
@@ -52,7 +60,7 @@ const Player: FC<Props> = (props) => {
         <div className="player__timeline-waveform">
           <div>0:00</div>
           <input type="range" />
-          <div>{duration}</div>
+          <div>{calculateTime(duration)}</div>
         </div>
       </div>
       <div className="player__volume"></div>
