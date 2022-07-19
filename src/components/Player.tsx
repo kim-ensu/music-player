@@ -20,6 +20,8 @@ const Player: FC<Props> = (props) => {
 
   const onLoadedMetadata = () => {
     setDuration(audioPlayer.current?.duration);
+    const seconds = Math.floor(audioPlayer.current.duration);
+    progressBar.current.max = seconds.toString();
   };
 
   const calculateTime = (secs: number): string => {
@@ -38,6 +40,15 @@ const Player: FC<Props> = (props) => {
     } else {
       audioPlayer.current.pause();
     }
+  };
+
+  const changeRange = () => {
+    audioPlayer.current.currentTime = +progressBar.current.value;
+    progressBar.current.style.setProperty(
+      "--seek-before-width",
+      `${(+progressBar.current.value / duration) * 100}%`
+    );
+    setCurrentTime(+progressBar.current.value);
   };
 
   return (
@@ -67,7 +78,7 @@ const Player: FC<Props> = (props) => {
 
         <div className="player__timeline-waveform">
           <div className="player__current-time">{calculateTime(currentTime)}</div>
-          <input type="range" defaultValue="0" ref={progressBar} />
+          <input type="range" defaultValue="0" ref={progressBar} onChange={changeRange} />
           <div className="player__duration">
             {duration && !isNaN(duration) && calculateTime(duration)}
           </div>
