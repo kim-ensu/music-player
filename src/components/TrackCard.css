@@ -1,0 +1,41 @@
+.playlist_item {
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13rem;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.playlist_item:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+
+.playlist_img-holder > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+.playlist_text {
+  margin-top: 1rem;
+  line-height: 1;
+  width: 100%;
+}
+
+.playlist_text > h1 {
+  font-size: 1.2rem;
+}
+
+.playlist_text > p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: gray;
+}

@@ -1,6 +1,5 @@
 import React, { FC, useState, useRef, useEffect } from "react";
-import { useSelector } from "react-redux";
-import type { RootState } from "store/index";
+import { useAppSelector } from "store/hooks";
 import "./Player.css";
 import { AiFillStepBackward } from "react-icons/ai";
 import { AiFillStepForward } from "react-icons/ai";
@@ -10,7 +9,11 @@ import { AiFillPauseCircle } from "react-icons/ai";
 type Props = {};
 
 const Player: FC<Props> = (props) => {
-  const track = useSelector((state: RootState) => state.music.musicList[4]);
+  const trackId = useAppSelector((state) => state.music.currentTrackId);
+  const currentTrack = useAppSelector((state) =>
+    state.music.musicList.find((track) => track.id === trackId)
+  );
+
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [duration, setDuration] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState<number>(0);
@@ -18,6 +21,14 @@ const Player: FC<Props> = (props) => {
   const audioPlayer = useRef<HTMLAudioElement>(null!);
   const progressBar = useRef<HTMLInputElement>(null!);
   const animationRef = useRef<number>(null!);
+
+  useEffect(() => {
+    if (trackId !== null) {
+      setIsPlaying(true);
+      audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    }
+  }, [trackId]);
 
   const onLoadedMetadata = () => {
     setDuration(audioPlayer.current?.duration);
@@ -66,14 +77,16 @@ const Player: FC<Props> = (props) => {
 
   return (
     <div className="player">
-      <div className="player__current-song">
-        <img src={track.album_img} alt="" width={100} height={100} />
-      </div>
+      {trackId && (
+        <div className="player__current-song">
+          <img src={currentTrack?.album_img} alt="" width={100} height={100} />
+        </div>
+      )}
 
       <div className="player__control-panel">
         <audio
           ref={audioPlayer}
-          src={track.audio}
+          src={currentTrack?.audio}
           preload="metadata"
           onLoadedMetadata={onLoadedMetadata}></audio>
 

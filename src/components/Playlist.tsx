@@ -1,10 +1,22 @@
 import React, { FC } from "react";
+import { useSelector } from "react-redux";
+import type { RootState } from "store/index";
+import TrackCard from "./TrackCard";
 import "./Playlist.css";
 
 type Props = {};
 
 const Playlist: FC<Props> = (props) => {
-  return <div>Playlist</div>;
+  const playlistArr = useSelector((state: RootState) => state.music.musicList);
+  return (
+    <div className="playlist">
+      <ul>
+        {playlistArr.map((track) => (
+          <TrackCard track={track} key={track.id} />
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Playlist;

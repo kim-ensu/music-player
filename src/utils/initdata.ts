@@ -53,7 +53,7 @@ export const musicListInitState: ITrack[] = [
     name: "End of Line",
     singer: "Daft Punk",
     genre: "Electronic",
-    audio: "./music/Daft_Punk–End_of_Line",
+    audio: "./music/Daft_Punk–End_of_Line.mp3",
     album_img: "./images/end_of_line_cover.jpg",
     id: 7,
   },
