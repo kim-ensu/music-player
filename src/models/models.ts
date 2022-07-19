@@ -6,3 +6,8 @@ export interface ITrack {
   album_img: string;
   id: number;
 }
+
+export interface IGenre {
+  name: string;
+  id: number;
+}
