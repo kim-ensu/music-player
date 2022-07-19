@@ -91,13 +91,13 @@ const Player: FC<Props> = (props) => {
           onLoadedMetadata={onLoadedMetadata}></audio>
 
         <div className="player__buttons">
-          <button>
+          <button className="backward-btn">
             <AiFillStepBackward />
           </button>
-          <button onClick={togglePlayPause}>
+          <button className="play-pause-btn" onClick={togglePlayPause}>
             {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
           </button>
-          <button>
+          <button className="forward-btn">
             <AiFillStepForward />
           </button>
         </div>

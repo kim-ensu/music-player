@@ -12,11 +12,16 @@
 
 .player__control-panel {
   display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .player__buttons {
   display: flex;
+  margin-bottom: 10px;
+  gap: 15px;
 }
 
 .player__buttons > button {
@@ -27,6 +32,10 @@
   align-items: center;
   font-size: 24px;
   cursor: pointer;
+}
+
+button.play-pause-btn {
+  font-size: 32px;
 }
 
 .player__buttons > button:hover {
