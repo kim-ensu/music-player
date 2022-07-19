@@ -1,13 +1,19 @@
 import React, { FC } from "react";
-import { useSelector } from "react-redux";
-import type { RootState } from "store/index";
 import TrackCard from "./TrackCard";
 import "./Playlist.css";
+import { useAppSelector } from "store/hooks";
+import { stat } from "fs";
 
 type Props = {};
 
 const Playlist: FC<Props> = (props) => {
-  const playlistArr = useSelector((state: RootState) => state.music.musicList);
+  const currentGenreId = useAppSelector((state) => state.genres.currentGenreId);
+  const playlistArr = useAppSelector((state) =>
+    currentGenreId === 0
+      ? state.music.musicList
+      : state.music.musicList.filter((track) => track.genreId === currentGenreId)
+  );
+
   return (
     <div className="playlist">
       <ul>

@@ -4,7 +4,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "The Diary Of Jane",
     singer: "Breaking_Benjamin",
-    genre: "Rock",
+    genreId: 2,
     audio: "./music/Breaking_Benjamin-The_Diary_Of_Jane.mp3",
     album_img: "./images/diary_of_jane_cover.jpg",
     id: 1,
@@ -12,7 +12,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Throne",
     singer: "Bring Me The Horizon",
-    genre: "Rock",
+    genreId: 2,
     audio: "./music/Bring_Me_The_Horizon–Throne.mp3",
     album_img: "./images/thats_the_spirit_cover.jpg",
     id: 2,
@@ -20,7 +20,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Safe And Sound",
     singer: "Capital Cities",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/Capital_Cities-Safe_And_Sound.mp3",
     album_img: "./images/safe_and_sound.jpg",
     id: 3,
@@ -28,7 +28,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Stay With Me",
     singer: "Celldweller",
-    genre: "Rock",
+    genreId: 2,
     audio: "./music/Celldweller-Stay_with_me.mp3",
     album_img: "./images/stay_with_me_cover.jpg",
     id: 4,
@@ -36,7 +36,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Bury It",
     singer: "CHVRCHES",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/CHVRCHES-Bury_It.mp3",
     album_img: "./images/bury_it_cover.jpg",
     id: 5,
@@ -44,7 +44,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Paradise",
     singer: "Coldplay",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/Coldplay-Paradise.mp3",
     album_img: "./images/paradise_cover.jpg",
     id: 6,
@@ -52,7 +52,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "End of Line",
     singer: "Daft Punk",
-    genre: "Electronic",
+    genreId: 4,
     audio: "./music/Daft_Punk–End_of_Line.mp3",
     album_img: "./images/end_of_line_cover.jpg",
     id: 7,
@@ -60,7 +60,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "From Nowhere",
     singer: "Dan Croll",
-    genre: "Electronic",
+    genreId: 4,
     audio: "./music/Dan_Croll-From_Nowhere_(Baardsen_Remix).mp3",
     album_img: "./images/from_nowhere_cover.jpg",
     id: 8,
@@ -68,7 +68,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Mockingbird",
     singer: "Eminem",
-    genre: "Rap",
+    genreId: 3,
     audio: "./music/Eminem–Mockingbird.mp3",
     album_img: "./images/mockingbird_cover.jpg",
     id: 9,
@@ -76,7 +76,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "The Greatest View",
     singer: "Flume",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/Flume-The_Greatest_View.mp3",
     album_img: "./images/the_greatest-view_cover.jpg",
     id: 10,
@@ -84,7 +84,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "High Road",
     singer: "Fort Minor",
-    genre: "Rap",
+    genreId: 3,
     audio: "./music/Fort_Minor-High_road.mp3",
     album_img: "./images/high_road_cover.jpg",
     id: 11,
@@ -92,7 +92,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "My Life Be Like",
     singer: "Grits",
-    genre: "Rap",
+    genreId: 3,
     audio: "./music/Grits-My_Life_Be_Like.mp3",
     album_img: "./images/my_life_be_like.jpg",
     id: 12,
@@ -100,7 +100,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Demons",
     singer: "Imagine Dragons",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/Imagine_Dragons–Demons.mp3",
     album_img: "./images/demons_cover.jpg",
     id: 13,
@@ -108,7 +108,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "In the End",
     singer: "Linkin Park",
-    genre: "Rock",
+    genreId: 2,
     audio: "./music/Linkin_Park–In_the_End.mp3",
     album_img: "./images/in_the_end_cover.jpg",
     id: 14,
@@ -116,7 +116,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Midnight City",
     singer: "M83",
-    genre: "Electronic",
+    genreId: 4,
     audio: "./music/M83-Midnight_City.mp3",
     album_img: "./images/midnight_city_cover.jpg",
     id: 15,
@@ -124,7 +124,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Dont Call Me Up",
     singer: "Mabel",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/Mabel–Dont_Call_Me_Up.mp3",
     album_img: "./images/dont_call_me_up_cover.jpg",
     id: 16,
@@ -132,7 +132,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Counting Stars",
     singer: "OneRepublic",
-    genre: "Pop",
+    genreId: 1,
     audio: "./music/OneRepublic-Counting_Stars.mp3",
     album_img: "./images/counting_stars_cover.jpg",
     id: 17,
@@ -140,7 +140,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Где нас нет",
     singer: "Oxxymiron",
-    genre: "Rap",
+    genreId: 3,
     audio: "./music/Oxxymiron–Где_нас_нет.mp3",
     album_img: "./images/gde_nas_net_cover.jpg",
     id: 18,
@@ -148,7 +148,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Witchcraft",
     singer: "Pendulum",
-    genre: "Rock",
+    genreId: 2,
     audio: "./music/Pendulum-Witchcraft.mp3",
     album_img: "./images/witchcraft_cover.jpg",
     id: 19,
@@ -156,7 +156,7 @@ export const musicListInitState: ITrack[] = [
   {
     name: "Forget",
     singer: "The Tech Thieves",
-    genre: "Electronic",
+    genreId: 4,
     audio: "./music/The_Tech_Thieves–Forget.mp3",
     album_img: "./images/forget_cover.jpg",
     id: 20,
