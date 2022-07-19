@@ -9,8 +9,8 @@ const Sidebar: FC<Props> = (props) => {
   return (
     <div className="siderbar">
       <ul>
-        {genresList.map((genre) => (
-          <li>{genre}</li>
+        {genresList.map(({ id, name }) => (
+          <li key={id}>{name}</li>
         ))}
       </ul>
     </div>
