@@ -7,12 +7,12 @@ import { stat } from "fs";
 type Props = {};
 
 const Playlist: FC<Props> = (props) => {
+  const currentGenreId = useAppSelector((state) => state.genres.currentGenreId);
   const playlistArr = useAppSelector((state) =>
     currentGenreId === 0
       ? state.music.musicList
       : state.music.musicList.filter((track) => track.genreId === currentGenreId)
   );
-  const currentGenreId = useAppSelector((state) => state.genres.currentGenreId);
 
   return (
     <div className="playlist">
