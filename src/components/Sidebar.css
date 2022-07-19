@@ -1,6 +1,7 @@
 .sidebar {
   background-color: #000000;
   color: #fff;
+  height: 0;
 }
 
 .hamburger {
@@ -48,4 +49,18 @@
 .genres-menu li:hover {
   color: #3C28EA;
   cursor: pointer;
+}
+
+@media screen and (min-width:576px) {
+  .hamburger{
+    display: none;
+  }
+
+  .sidebar {
+    width: 30%;
+  }
+
+  .genres-menu {
+    position: static;
+  }
 }

@@ -1,14 +1,19 @@
+.playlist {
+  --bgColor: #121212;
+}
+
 .playlist > ul {
   display: grid;
   place-items: center;
-  background-color: #121212;
+  background-color: var(--bgColor);
   color: #fff;
   gap: 20px;
   padding: 20px 0 120px;
 }
 
 .playlist__header {
-  background-color: black;
+  background-color: var(--bgColor);
   color: #fff;
   text-align:center;
+  padding-top: 25px;
 }
