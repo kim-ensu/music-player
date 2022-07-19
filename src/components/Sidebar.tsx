@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import "./Sidebar.css";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { changeGenreId } from "store/slices/genresSlice";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -18,7 +19,7 @@ const Sidebar: FC<Props> = (props) => {
   };
 
   return (
-    <div className="siderbar">
+    <div className="sidebar">
       <ul>
         {genresList.map(({ id, name }) => (
           <li key={id} onClick={() => handleClick(id)}>
