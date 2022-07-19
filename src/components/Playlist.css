@@ -7,6 +7,8 @@
   padding: 20px 0 120px;
 }
 
-.player__current-song > img {
-  
+.playlist__header {
+  background-color: black;
+  color: #fff;
+  text-align:center;
 }
