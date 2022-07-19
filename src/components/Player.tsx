@@ -17,7 +17,8 @@ const Player: FC<Props> = (props) => {
   const audioPlayer = useRef<HTMLAudioElement>(null!);
 
   useEffect(() => {
-    setDuration(audioPlayer.current.duration);
+    const seconds = Math.floor(audioPlayer.current.duration);
+    setDuration(seconds);
   }, [audioPlayer?.current?.onloadedmetadata, audioPlayer?.current?.readyState]);
 
   const togglePlayPause = () => {
