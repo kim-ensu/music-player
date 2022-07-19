@@ -42,7 +42,7 @@
 
 input[type=range] {
   --bar-bg: #3E3E3E;
-  --seek-before-width: 100px;
+  --seek-before-width: 0;
   --seek-before-color: #3C28EA;
   --knobby: #888888;
   --selectedKnobby: #2DEAF6;

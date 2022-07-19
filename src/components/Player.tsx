@@ -16,6 +16,7 @@ const Player: FC<Props> = (props) => {
   const [currentTime, setCurrentTime] = useState<number>(0);
 
   const audioPlayer = useRef<HTMLAudioElement>(null!);
+  const progressBar = useRef<HTMLInputElement>(null!);
 
   const onLoadedMetadata = () => {
     setDuration(audioPlayer.current?.duration);
@@ -66,7 +67,7 @@ const Player: FC<Props> = (props) => {
 
         <div className="player__timeline-waveform">
           <div className="player__current-time">{calculateTime(currentTime)}</div>
-          <input type="range" defaultValue="0" />
+          <input type="range" defaultValue="0" ref={progressBar} />
           <div className="player__duration">
             {duration && !isNaN(duration) && calculateTime(duration)}
           </div>
