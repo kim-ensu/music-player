@@ -10,6 +10,12 @@
   background-color: #1B1B1B;
 }
 
+.player__current-song {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
 .player__control-panel {
   display: flex;
   width: 100%;
@@ -44,11 +50,13 @@ button.play-pause-btn {
 
 .player__timeline-waveform {
   display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .player__timeline-waveform > div {
   color: var(--primary);
-  font-family: monospace;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
 }
 

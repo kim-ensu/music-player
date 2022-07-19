@@ -79,7 +79,7 @@ const Player: FC<Props> = (props) => {
     <div className="player">
       {trackId && (
         <div className="player__current-song">
-          <img src={currentTrack?.album_img} alt="" width={100} height={100} />
+          <img src={currentTrack?.album_img} alt="" width={90} height={90} />
         </div>
       )}
 
