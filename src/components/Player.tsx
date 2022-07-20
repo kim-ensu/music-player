@@ -1,10 +1,11 @@
 import React, { FC, useState, useRef, useEffect } from "react";
-import { useAppSelector } from "store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import "./Player.css";
 import { AiFillStepBackward } from "react-icons/ai";
 import { AiFillStepForward } from "react-icons/ai";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { AiFillPauseCircle } from "react-icons/ai";
+import { changeCurrentTrackId } from "store/slices/musicSlice";
 
 type Props = {};
 
@@ -13,6 +14,15 @@ const Player: FC<Props> = (props) => {
   const currentTrack = useAppSelector((state) =>
     state.music.musicList.find((track) => track.id === trackId)
   );
+
+  const currentGenreId = useAppSelector((state) => state.genres.currentGenreId);
+  const playlistArr = useAppSelector((state) =>
+    currentGenreId === 0
+      ? state.music.musicList
+      : state.music.musicList.filter((track) => track.genreId === currentGenreId)
+  );
+
+  const dispatch = useAppDispatch();
 
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [duration, setDuration] = useState<number>(0);
@@ -75,6 +85,24 @@ const Player: FC<Props> = (props) => {
     setCurrentTime(+progressBar.current.value);
   };
 
+  const handleBackward = () => {
+    const playlistCurrentTrackIndex = playlistArr.findIndex((track) => track.id === trackId);
+    if (playlistCurrentTrackIndex === 0) {
+      dispatch(changeCurrentTrackId(playlistArr[playlistArr.length - 1].id));
+    } else {
+      dispatch(changeCurrentTrackId(playlistArr[playlistCurrentTrackIndex - 1].id));
+    }
+  };
+
+  const handleForward = () => {
+    const playlistCurrentTrackIndex = playlistArr.findIndex((track) => track.id === trackId);
+    if (playlistCurrentTrackIndex === playlistArr.length - 1) {
+      dispatch(changeCurrentTrackId(playlistArr[0].id));
+    } else {
+      dispatch(changeCurrentTrackId(playlistArr[playlistCurrentTrackIndex + 1].id));
+    }
+  };
+
   return (
     <div className="player">
       {trackId && (
@@ -91,13 +119,13 @@ const Player: FC<Props> = (props) => {
           onLoadedMetadata={onLoadedMetadata}></audio>
 
         <div className="player__buttons">
-          <button className="backward-btn">
+          <button className="backward-btn" onClick={handleBackward}>
             <AiFillStepBackward />
           </button>
           <button className="play-pause-btn" onClick={togglePlayPause}>
             {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
           </button>
-          <button className="forward-btn">
+          <button className="forward-btn" onClick={handleForward}>
             <AiFillStepForward />
           </button>
         </div>
