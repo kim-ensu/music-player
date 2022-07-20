@@ -16,6 +16,10 @@
   align-items: center;
 }
 
+.player__current-song__text {
+  display: none;
+}
+
 .player__control-panel {
   display: flex;
   width: 100%;
@@ -172,4 +176,34 @@ input[type=range]::-moz-range-thumb {
 input[type=range]:active::-moz-range-thumb {
   transform: scale(1.2);
   background: var(--selectedKnobby);
+}
+
+@media screen and (min-width:1024px) {
+
+  .player__current-song {
+    position: absolute;
+  }
+
+  .player__current-song__text {
+    display: block;
+    min-width: 200px;
+  }
+  
+  .player__current-song__text {
+    margin-left: 1rem;
+    line-height: 1;
+    width: 100%;
+  }
+  
+  .player__current-song__text > h1 {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  .player__current-song__text > p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: gray;
+  }
 }
