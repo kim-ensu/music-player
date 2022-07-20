@@ -1,12 +1,33 @@
+.playlist {
+  --bgColor: #121212;
+}
+
 .playlist > ul {
   display: grid;
   place-items: center;
-  background-color: black;
+  background-color: var(--bgColor);
   color: #fff;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 0 120px;
 }
 
-.player__current-song > img {
+.playlist__header {
+  background-color: var(--bgColor);
+  color: #fff;
+  text-align:center;
+  padding-top: 25px;
+}
+
+@media screen and (min-width:576px) {
+  .playlist {
+    width: 100%;
+    padding-left: 200px;
+  }
+
+  .playlist > ul {
+    grid-template-columns: repeat(auto-fill, 208px);
+    justify-content: center;
+    gap: 20px
+  }
   
 }

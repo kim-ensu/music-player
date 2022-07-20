@@ -79,7 +79,7 @@ const Player: FC<Props> = (props) => {
     <div className="player">
       {trackId && (
         <div className="player__current-song">
-          <img src={currentTrack?.album_img} alt="" width={100} height={100} />
+          <img src={currentTrack?.album_img} alt="" width={90} height={90} />
         </div>
       )}
 
@@ -91,13 +91,13 @@ const Player: FC<Props> = (props) => {
           onLoadedMetadata={onLoadedMetadata}></audio>
 
         <div className="player__buttons">
-          <button>
+          <button className="backward-btn">
             <AiFillStepBackward />
           </button>
-          <button onClick={togglePlayPause}>
+          <button className="play-pause-btn" onClick={togglePlayPause}>
             {isPlaying ? <AiFillPauseCircle /> : <AiFillPlayCircle />}
           </button>
-          <button>
+          <button className="forward-btn">
             <AiFillStepForward />
           </button>
         </div>
@@ -109,7 +109,6 @@ const Player: FC<Props> = (props) => {
             {duration && !isNaN(duration) && calculateTime(duration)}
           </div>
         </div>
-        <div className="player__volume">Volume</div>
       </div>
     </div>
   );
